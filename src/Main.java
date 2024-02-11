@@ -1,11 +1,18 @@
 import atm.ATM;
+import bank.Bank;
 
 public class Main {
     public static void main(String[] args) {
-        ATM atm = new ATM(20000);
-        atm.showMoneyAmount();
-        atm.showCountBanknotes();
-        atm.withdraw(20020);
-        atm.showCountBanknotes();
+        Bank bank = new Bank(10);
+
+        while (true) {
+            bank.work();
+
+            try {
+                Thread.sleep(650);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
